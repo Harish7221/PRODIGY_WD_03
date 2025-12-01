@@ -1,0 +1,90 @@
+body {
+    text-align: center;
+    font-family: "Fredoka One", cursive;
+    background: radial-gradient(circle, #ff9a9e, #fad0c4, #fcb69f);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    background: #fff6cb;
+    border: 5px solid #ff6f61;
+    border-radius: 20px;
+    font-size: 55px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    box-shadow: 0 6px 0 #d85a52;
+    transition: transform 0.15s ease, background 0.25s ease;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    background: #ffefad;
+}
+
+/* X and O fun colors */
+.cell.X {
+    color: #ff4757; /* Red */
+}
+
+.cell.O {
+    color: #1e90ff; /* Blue */
+}
+
+/* Pop animation */
+.cell.clicked {
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.4); }
+    100% { transform: scale(1); }
+}
+
+#status {
+    color: white;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+#reset {
+    margin-top: 25px;
+    padding: 12px 30px;
+    font-size: 22px;
+    border: none;
+    background: #ff6f61;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #d85a52;
+    transition: 0.2s;
+}
+
+#reset:hover {
+    background: #ff8576;
+    transform: scale(1.07);
+}
